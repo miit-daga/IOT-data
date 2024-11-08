@@ -30,7 +30,11 @@ console.log("File path:", filePath);
 const githubToken = "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"; // GitHub token for pushing to your repo
 const repoName = "IOT-data"; // GitHub repository name // Path to responses.json file in your repo
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://16.170.245.220:8080', // Replace with your frontend URL
+    methods: ['GET', 'POST'],
+}));
+
 app.use(bodyParser.json());
 
 // Initialize the JSON files
