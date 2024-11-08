@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #message-container {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+
+    #message {
+      margin: 0;
+    }
+
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Select a Topic</h2>
+    
+    <form id="selectionForm">
+      <div class="form-group">
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="teamName" required>
+      </div>
+      <div class="form-group">
+        <label for="member1">Member 1 Reg No:</label>
+        <input type="text" id="member1" required>
+      </div>
+      <div class="form-group">
+        <label for="member2">Member 2 Reg No:</label>
+        <input type="text" id="member2" required>
+      </div>
+      <div class="form-group">
+        <label for="member3">Member 3 Reg No:</label>
+        <input type="text" id="member3" required>
+      </div>
+      <div class="form-group">
+        <label for="member4">Member 4 Reg No:</label>
+        <input type="text" id="member4" required>
+      </div>
+      <div class="form-group">
+        <label for="member5">Member 5 Reg No:</label>
+        <input type="text" id="member5" required>
+      </div>
+      <div class="form-group">
+        <label for="member6">Member 6 Reg No (optional):</label>
+        <input type="text" id="member6">
+      </div>
+      <div class="form-group">
+        <label for="topicNumber">Topic Number:</label>
+        <input type="number" id="topicNumber" min="1" max="70" required>
+      </div>
+      <button type="submit">Select Topic</button>
+    </form>
+
+    <div id="message-container" style="display: none;">
+      <p id="message"></p>
+    </div>
+  </div>
+
+  <script>
+    const selectionForm = document.getElementById("selectionForm");
+    const messageContainer = document.getElementById("message-container");
+    const message = document.getElementById("message");
+
+    selectionForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const data = {
+        teamName: document.getElementById("teamName").value,
+        member1: document.getElementById("member1").value,
+        member2: document.getElementById("member2").value,
+        member3: document.getElementById("member3").value,
+        member4: document.getElementById("member4").value,
+        member5: document.getElementById("member5").value,
+        member6: document.getElementById("member6").value || null,
+        topicNumber: parseInt(document.getElementById("topicNumber").value),
+      };
+
+      const response = await fetch("http://localhost:3000/api/select-topic", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      message.textContent = result.message;
+
+      if (result.success) {
+        message.classList.add("success");
+        alert("Topic selection submitted successfully!");
+      } else {
+        message.classList.add("error");
+      }
+
+      messageContainer.style.display = "block";
+      setTimeout(() => {
+        messageContainer.style.display = "none";
+        message.classList.remove("success", "error");
+      }, 5000);
+
+      if (result.success) {
+        selectionForm.reset();
+      }
+    });
+  </script>
+</body>
+</html>
