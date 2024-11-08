@@ -21,10 +21,14 @@ const PORT = 3000;
 
 // Set up Git
 const git = simpleGit();
-const repoPath = path.resolve(__dirname, "IOT-data"); // Path to your local clone of the GitHub repository
+const repoPath = "IOT-data";// Make sure this is the correct path to your repo
+const filePath = "responses.json";
+// This should be the correct path to your responses.json
+// Path to your local clone of the GitHub repository
+console.log("File path:", filePath);
+
 const githubToken = "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"; // GitHub token for pushing to your repo
-const repoName = "IOT-data"; // GitHub repository name
-const filePath = path.join(repoPath, "responses.json"); // Path to responses.json file in your repo
+const repoName = "IOT-data"; // GitHub repository name // Path to responses.json file in your repo
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -35,14 +39,18 @@ const topicsFilePath = "topics.json";
 
 // Reset both JSON files when the server starts
 function resetFiles() {
-    // Create or reset the responses.json file
-    fs.writeFileSync(jsonFilePath, JSON.stringify([]), "utf-8");
-    console.log("responses.json file reset.");
+    // Check if responses.json exists, if not create it
+    if (!fs.existsSync(jsonFilePath)) {
+        fs.writeFileSync(jsonFilePath, JSON.stringify([]), "utf-8");
+        console.log("responses.json file created.");
+    }
 
-    // Create or reset the topics.json file with initial data
-    const initialTopics = Array.from({ length: 70 }, (_, i) => ({ number: i + 1, available: true }));
-    fs.writeFileSync(topicsFilePath, JSON.stringify(initialTopics, null, 2), "utf-8");
-    console.log("topics.json file reset.");
+    // Check if topics.json exists, if not create it
+    if (!fs.existsSync(topicsFilePath)) {
+        const initialTopics = Array.from({ length: 70 }, (_, i) => ({ number: i + 1, available: true }));
+        fs.writeFileSync(topicsFilePath, JSON.stringify(initialTopics, null, 2), "utf-8");
+        console.log("topics.json file created.");
+    }
 }
 
 // Reset files on server startup
@@ -74,7 +82,8 @@ const commitAndPushToGitHub = async () => {
         // Stage the changes
         await git.add(filePath);
         await git.commit("Update responses.json");
-        await git.push("origin", "main"); // Replace 'main' with your branch if different
+        await git.push('https://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@github.com/miit-daga/IOT-data.git', 'main');
+        // Replace 'main' with your branch if different
         console.log("Changes pushed to GitHub.");
     } catch (error) {
         console.error("Error committing and pushing changes:", error);
@@ -154,8 +163,9 @@ app.post("/api/select-topic", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
+
 
 
