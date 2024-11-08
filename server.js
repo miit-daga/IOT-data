@@ -51,7 +51,7 @@ function resetFiles() {
 
     // Check if topics.json exists, if not create it
     if (!fs.existsSync(topicsFilePath)) {
-        const initialTopics = Array.from({ length: 70 }, (_, i) => ({ number: i + 1, available: true }));
+        const initialTopics = Array.from({ length: 200 }, (_, i) => ({ number: i + 1, available: true }));
         fs.writeFileSync(topicsFilePath, JSON.stringify(initialTopics, null, 2), "utf-8");
         console.log("topics.json file created.");
     }
