@@ -31,7 +31,7 @@ const githubToken = "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"; // GitHub token 
 const repoName = "IOT-data"; // GitHub repository name // Path to responses.json file in your repo
 
 app.use(cors({
-    origin: 'http://iot-project.sytes.net', // Replace with your frontend URL
+    origin: 'http://iot-project.sytes.net:8080', // Replace with your frontend URL
     methods: ['GET', 'POST'],
 }));
 
