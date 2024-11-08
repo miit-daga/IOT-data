@@ -143,7 +143,7 @@ const PORT = 3000;
 const git = simpleGit();
 const repoPath = path.resolve(__dirname, "IOT-data"); // Path to your local clone of the GitHub repository
 const githubToken = "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"; // GitHub token for pushing to your repo
-const repoName = "your-repository-name"; // GitHub repository name
+const repoName = "IOT-data"; // GitHub repository name
 const filePath = path.join(repoPath, "responses.json"); // Path to responses.json file in your repo
 
 app.use(cors());
