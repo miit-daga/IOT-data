@@ -145,7 +145,7 @@
         topicNumber: parseInt(document.getElementById("topicNumber").value),
       };
 
-      const response = await fetch("http://localhost:3000/api/select-topic", {
+      const response = await fetch("http://16.170.245.220:8080/api/select-topic", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
