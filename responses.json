@@ -158,5 +158,45 @@
     "member5": "22BIT0118",
     "member6": "22BIT0078",
     "topicNumber": 30
+  },
+  {
+    "teamName": "Team Haze",
+    "member1": "22BIT0004",
+    "member2": "22BIT0132",
+    "member3": "22BIT0077",
+    "member4": "22BIT0647",
+    "member5": "22BIT0155",
+    "member6": "",
+    "topicNumber": 63
+  },
+  {
+    "teamName": "BONKERS",
+    "member1": "22BIT0189",
+    "member2": "22BIT0185",
+    "member3": "22BIT0222",
+    "member4": "22BIT0655",
+    "member5": "22BIT0663",
+    "member6": "",
+    "topicNumber": 21
+  },
+  {
+    "teamName": "BRAINBEES",
+    "member1": "22BIT0532",
+    "member2": "22BIT0299",
+    "member3": "22BIT0357",
+    "member4": "22BIT0103",
+    "member5": "22BIT0024",
+    "member6": "",
+    "topicNumber": 69
+  },
+  {
+    "teamName": "BOLD BYTES",
+    "member1": "22BIT0404",
+    "member2": "22BIT0405",
+    "member3": "22BIT0354",
+    "member4": "22BIT0279",
+    "member5": "22BIT0281",
+    "member6": "",
+    "topicNumber": 23
   }
 ]
