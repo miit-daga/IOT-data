@@ -1,7 +1,7 @@
 [
   {
     "number": 1,
-    "available": true
+    "available": false
   },
   {
     "number": 2,
@@ -9,7 +9,7 @@
   },
   {
     "number": 3,
-    "available": true
+    "available": false
   },
   {
     "number": 4,
@@ -41,7 +41,7 @@
   },
   {
     "number": 11,
-    "available": true
+    "available": false
   },
   {
     "number": 12,
@@ -81,7 +81,7 @@
   },
   {
     "number": 21,
-    "available": true
+    "available": false
   },
   {
     "number": 22,
@@ -89,15 +89,15 @@
   },
   {
     "number": 23,
-    "available": true
+    "available": false
   },
   {
     "number": 24,
-    "available": true
+    "available": false
   },
   {
     "number": 25,
-    "available": true
+    "available": false
   },
   {
     "number": 26,
@@ -133,7 +133,7 @@
   },
   {
     "number": 34,
-    "available": true
+    "available": false
   },
   {
     "number": 35,
@@ -181,7 +181,7 @@
   },
   {
     "number": 46,
-    "available": true
+    "available": false
   },
   {
     "number": 47,
@@ -237,7 +237,7 @@
   },
   {
     "number": 60,
-    "available": true
+    "available": false
   },
   {
     "number": 61,
@@ -249,7 +249,7 @@
   },
   {
     "number": 63,
-    "available": true
+    "available": false
   },
   {
     "number": 64,
@@ -273,7 +273,7 @@
   },
   {
     "number": 69,
-    "available": true
+    "available": false
   },
   {
     "number": 70,
