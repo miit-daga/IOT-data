@@ -80,7 +80,7 @@ function updateResponses(responses) {
 
 const commitAndPushToGitHub = async () => {
     try {
-        await git.add(filePath);
+        await git.add(".");
         await git.commit("Update responses.json");
         await git.push('https://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@github.com/miit-daga/IOT-data.git', 'main');
         console.log("Changes pushed to GitHub.");

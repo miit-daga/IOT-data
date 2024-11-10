@@ -13,7 +13,7 @@
   },
   {
     "number": 4,
-    "available": true
+    "available": false
   },
   {
     "number": 5,
@@ -25,7 +25,7 @@
   },
   {
     "number": 7,
-    "available": true
+    "available": false
   },
   {
     "number": 8,
@@ -57,7 +57,7 @@
   },
   {
     "number": 15,
-    "available": true
+    "available": false
   },
   {
     "number": 16,
@@ -109,7 +109,7 @@
   },
   {
     "number": 28,
-    "available": true
+    "available": false
   },
   {
     "number": 29,
@@ -121,7 +121,7 @@
   },
   {
     "number": 31,
-    "available": true
+    "available": false
   },
   {
     "number": 32,
@@ -177,7 +177,7 @@
   },
   {
     "number": 45,
-    "available": true
+    "available": false
   },
   {
     "number": 46,
@@ -233,7 +233,7 @@
   },
   {
     "number": 59,
-    "available": true
+    "available": false
   },
   {
     "number": 60,
@@ -245,7 +245,7 @@
   },
   {
     "number": 62,
-    "available": true
+    "available": false
   },
   {
     "number": 63,
