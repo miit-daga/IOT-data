@@ -258,5 +258,15 @@
     "member5": "22BIT0483",
     "member6": "22BIT0666",
     "topicNumber": 60
+  },
+  {
+    "teamName": "Embedded Engineers",
+    "member1": "22BIT0401",
+    "member2": "22BIT0653",
+    "member3": "22BIT0654",
+    "member4": "22BIT0003",
+    "member5": "22BIT0599",
+    "member6": "",
+    "topicNumber": 25
   }
 ]
