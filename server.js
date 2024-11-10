@@ -114,7 +114,7 @@ app.post("/api/select-topic", async (req, res) => {
     if (invalidMembers.length > 0) {
         return res.status(400).json({
             success: false,
-            message: "Invalid member ID format. Member IDs must be in the format '21BIT0000' to '21BIT0742' or '22BIT0000' to '22BIT0696'.",
+            message: "Invalid member ID format. Member IDs must be in the format '21BIT0001' to '21BIT0742' or '22BIT0001' to '22BIT0696'.",
             invalidMembers
         });
     }
@@ -170,7 +170,7 @@ app.post("/api/select-topic", async (req, res) => {
         console.log("Data saved to responses.json.");
 
         // Commit and push the updated file to GitHub
-        // await commitAndPushToGitHub();
+        await commitAndPushToGitHub();
 
         res.json({ success: true, message: `Topic ${topicNumber} selected successfully.` });
     } catch (err) {
